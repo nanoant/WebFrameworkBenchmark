@@ -1,0 +1,14 @@
+apply plugin:'java'
+apply plugin:'application'
+
+mainClassName = 'HelloWorldServer'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+ compile 'org.jboss.netty:netty:latest.integration'
+ compile 'com.google.inject:guice:latest.integration'
+ compile 'com.google.guava:guava:latest.integration'
+}
