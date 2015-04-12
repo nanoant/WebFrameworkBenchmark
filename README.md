@@ -1,8 +1,13 @@
 Web Frameworks Benchmark
 ------------------------
 
-Currently benchmarking following frameworks:
+[techempower]: https://www.techempower.com/benchmarks/
+[openresty]: http://openresty.org
+[nim]: http://nim-lang.org
+[undertow]: http://undertow.io
 
-* OpenResty via `nginx/lua.sh`
-* Nim via `nim/asynchttpserver`
-* Undertow via `undertow/pom.xml`
+The idea behind this benchmark is to re-evaluate results presented by [Techempower's Benchmark][techempower]. Currently benchmarking following frameworks:
+
+* [OpenResty][openresty] via `nginx/lua.sh`
+* [Nim][nim] via `nim/asynchttpserver`
+* [Undertow][undertow] via `undertow/pom.xml`
