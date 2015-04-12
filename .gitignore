@@ -1,6 +1,0 @@
-/nim/nim_asynchttpserver
-/nim/nimcache/
-/nginx/logs/
-/nginx/*_temp/
-/undertow/target/
-/download/

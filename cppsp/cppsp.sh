@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname $0)
+
 [ -d download ] || mkdir download
 
 [ -f download/cppsp_1.0.tar.xz ] || \
