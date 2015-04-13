@@ -1,35 +1,39 @@
 Web Frameworks Benchmark
 ------------------------
-
 [techempower]: https://www.techempower.com/benchmarks/
-[openresty]: http://openresty.org
-[nim]: http://nim-lang.org
-[undertow]: http://undertow.io
 
 The idea behind this benchmark is to re-evaluate results presented by
 [Techempower's Benchmark][techempower] benchmarking best & promising
-open-source frameworks:
+open-source frameworks.
 
-* [OpenResty][openresty] via `nginx/lua.sh`
-* [Nim][nim] via `nim/asynchttpserver`
-* [Undertow][undertow] via `undertow/pom.xml`
 
 ### Why another benchmark?
 
 I just found [Techempower's Benchmark][techempower] sources overcomplicated.
 Also wanted to test only framework overhead, that's why testing `Hello World`.
 
+
 ### Results
 
-|  Language  |     Framework     | Req/sec |  MBytes   |
-| ---------- | ----------------- | -------:| --------: |
-| Java       | Undertow          |  74'040 |  96.73 MB |
-| Java       | Netty             |  61'148 |  58.31 MB |
-| Go         | net/http          |  60'714 |  77.01 MB |
-| Nim        | AsyncHTTPServer   |  28'994 |  13.82 MB |
+[1]: http://undertow.io
+[2]: http://netty.io
+[3]: http://golang.org/pkg/net/http/
+[4]: https://github.com/davidmoreno/onion
+[5]: http://nim-lang.org
+
+[openresty]: http://openresty.org
+
+|  Language  |       Framework       | Req/sec[^1] |  MBytes   |
+| ---------- | --------------------- | -----------:| --------: |
+| Java       | [Undertow][1]         |      74'040 |  96.73 MB |
+| Java       | [Netty][2]            |      61'148 |  58.31 MB |
+| Go         | [net/http][3]         |      60'714 |  77.01 MB |
+| C          | [Onion][4][^1]        |      60'613 |  77.01 MB |
+| Nim        | [AsyncHTTPServer][5]  |      28'994 |  13.82 MB |
 
 
-Ran on *OSX 10.10.3* and *Intel(R) Core(TM) i5-2400S CPU* @ 2.50GHz, 16 GB RAM.
+[^1]: Ran on *OSX 10.10.3* and *Intel Core i5-2400S* 2.50GHz, 16 GB RAM.
+[^2]: Running `hello` example with `static` path.
 
 
 ### License
