@@ -1,1 +1,8 @@
 includeFiles = '.gitignore'
+
+[ source.markdown; *.md ]
+wrapColumn       = 80
+softWrap         = false
+showWrapColumn   = true
+spellChecking    = true
+spellingLanguage = 'en'
