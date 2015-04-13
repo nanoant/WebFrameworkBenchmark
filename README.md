@@ -23,17 +23,18 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 
 [openresty]: http://openresty.org
 
-|  Language  |       Framework       | Req/sec[^1] |  MBytes   |
-| ---------- | --------------------- | -----------:| --------: |
-| Java       | [Undertow][1]         |      74'040 |  96.73 MB |
-| Java       | [Netty][2]            |      61'148 |  58.31 MB |
-| Go         | [net/http][3]         |      60'714 |  77.01 MB |
-| C          | [Onion][4][^1]        |      60'613 |  77.01 MB |
-| Nim        | [AsyncHTTPServer][5]  |      28'994 |  13.82 MB |
+|  Language  |        Framework         | Req/sec<sup>1</sup> |    MBytes    |
+| ---------- | ------------------------------- | ------------:| ------------:|
+| Java       | [Undertow][1]                   |     74 040   |    96.73 MB  |
+| Java       | [Netty][2]                      |     61 148   |    58.31 MB  |
+| Go         | [net/http][3]                   |     60 714   |    77.01 MB  |
+| C          | [Onion][4]<sup>2</sup>          |     60 613   |    77.01 MB  |
+| Nim        | [AsyncHTTPServer][5]            |     28 994   |    13.82 MB  |
 
 
-[^1]: Ran on *OSX 10.10.3* and *Intel Core i5-2400S* 2.50GHz, 16 GB RAM.
-[^2]: Running `hello` example with `static` path.
+<sup>1</sup> Ran on *OSX 10.10.3* and *Intel Core i5-2400S* 2.50GHz, 16 GB RAM.
+
+<sup>2</sup> Running `hello` example with `static` path.
 
 
 ### License
