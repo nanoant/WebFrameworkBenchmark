@@ -30,7 +30,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 | Java       | [Undertow][undertow]               |    74 040  |   96.73  MB  |
 | Native/C   | [Nginx][echo]<sup>2</sup>          |    63 724  |  110.57  MB  |
 | Java       | [Netty][netty]                     |    61 148  |   58.31  MB  |
-| Go         | [net/http][go]                     |    60 714  |   77.01  MB  |
+| Go         | [net/http][go]                     |    60 714  |   76.91  MB  |
 | C          | [Onion][onion]<sup>3</sup>         |    60 613  |   77.01  MB  |
 | Lua        | [OpenResty][resty]<sup>4</sup>     |    47 370  |   81.56  MB  |
 | Erlang     | [Cowboy][cowboy]                   |    29 246  |   43.22  MB  |
