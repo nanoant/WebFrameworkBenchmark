@@ -29,6 +29,9 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 | Nim        | AsyncHTTPServer   |  28'994 |  13.82 MB |
 
 
+Ran on *OSX 10.10.3* and *Intel(R) Core(TM) i5-2400S CPU* @ 2.50GHz, 16 GB RAM.
+
+
 ### License
 
 This benchmark is provided under MIT license:
