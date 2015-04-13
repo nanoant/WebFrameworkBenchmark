@@ -1,0 +1,7 @@
+[package]
+name = "helloworld"
+version = "0.0.1"
+authors = ["Adam Strzelecki <ono@java.pl>"]
+
+[dependencies]
+iron = "*"

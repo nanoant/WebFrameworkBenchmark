@@ -24,6 +24,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 [puma]: http://puma.io
 [echo]: http://wiki.nginx.org/HttpEchoModule
 [resty]: http://openresty.org
+[iron]: http://ironframework.io
 
 |  Language  |        Framework          | Req/sec<sup>1</sup> |   MBytes     |
 | ---------- | ---------------------------------- | ----------:| ------------:|
@@ -33,6 +34,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 | Go         | [net/http][go]                     |    60 714  |   76.91  MB  |
 | C          | [Onion][onion]<sup>3</sup>         |    60 613  |   77.01  MB  |
 | Lua        | [OpenResty][resty]<sup>4</sup>     |    47 370  |   81.56  MB  |
+| Rust       | [Iron][iron]                       |    46 869  |   50.76  MB  |
 | Erlang     | [Cowboy][cowboy]                   |    29 246  |   43.22  MB  |
 | Nim        | [AsyncHTTPServer][nim]<sup>5</sup> |    28 994  |   13.82  MB  |
 | Ruby       | [Puma][puma]<sup>6</sup>           |    24 539  |   17.79  MB  |
