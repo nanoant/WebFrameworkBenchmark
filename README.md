@@ -10,7 +10,8 @@ open-source frameworks.
 ### Why another benchmark?
 
 I just found [Techempower's Benchmark][techempower] sources overcomplicated.
-Also wanted to test only framework overhead, that's why testing `Hello World`.
+Also wanted to test only framework overhead, that's why testing just trivial
+dynamic `Hello World` world output.
 
 
 ### Results
@@ -49,6 +50,16 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 <sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
 <sup>6</sup> *Nim* standard implementation, default GC, single-thread only.  
 <sup>7</sup> Using several *Ruby* instances with `puma -w 4`.  
+
+
+### Conclusions
+
+Seems that *Nim* is going to offer fastest web framework solution, due its
+amazing compile-time term rewriting capabilities and mixed GC and normal stack
+allocation.
+
+It has to be also emphasized that current *Nim* implementation is
+single-threaded, while *Java* solutions are multi-threaded.
 
 
 ### License
