@@ -1,0 +1,6 @@
+[submodule "onion/lib/libev"]
+	path = onion/lib/libev
+	url = git://github.com/scunningham/libev.git
+[submodule "onion/lib/onion"]
+	path = onion/lib/onion
+	url = git://github.com/davidmoreno/onion.git
