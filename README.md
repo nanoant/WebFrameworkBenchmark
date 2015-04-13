@@ -19,19 +19,21 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 [2]: http://netty.io
 [3]: http://golang.org/pkg/net/http/
 [4]: https://github.com/davidmoreno/onion
-[5]: http://nim-lang.org
-[6]: http://puma.io
+[5]: http://ninenines.eu/docs/en/cowboy/1.0/guide/getting_started/
+[6]: http://nim-lang.org
+[7]: http://puma.io
 
 [openresty]: http://openresty.org
 
-|  Language  |        Framework         | Req/sec<sup>1</sup> |    MBytes    |
+|  Language  |        Framework         | Req/sec<sup>1</sup> |   MBytes     |
 | ---------- | ------------------------------- | ------------:| ------------:|
-| Java       | [Undertow][1]                   |     74 040   |    96.73 MB  |
-| Java       | [Netty][2]                      |     61 148   |    58.31 MB  |
-| Go         | [net/http][3]                   |     60 714   |    77.01 MB  |
-| C          | [Onion][4]<sup>2</sup>          |     60 613   |    77.01 MB  |
-| Nim        | [AsyncHTTPServer][5]            |     28 994   |    13.82 MB  |
-| Ruby       | [Puma][6]                       |     24 539   |    17.79 MB  |
+| Java       | [Undertow][1]                   |     74 040   |   96.73  MB  |
+| Java       | [Netty][2]                      |     61 148   |   58.31  MB  |
+| Go         | [net/http][3]                   |     60 714   |   77.01  MB  |
+| C          | [Onion][4]<sup>2</sup>          |     60 613   |   77.01  MB  |
+| Erlang     | [Cowboy][5]                     |     29 246   |   43.22  MB  |
+| Nim        | [AsyncHTTPServer][6]            |     28 994   |   13.82  MB  |
+| Ruby       | [Puma][7]                       |     24 539   |   17.79  MB  |
 
 
 <sup>1</sup> Ran on *OSX 10.10.3* and *Intel Core i5-2400S* 2.50GHz, 16 GB RAM.
