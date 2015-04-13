@@ -25,6 +25,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 [echo]: http://wiki.nginx.org/HttpEchoModule
 [resty]: http://openresty.org
 [iron]: http://ironframework.io
+[pull]: https://github.com/Araq/Nim/pull/2244
 
 |  Language  |        Framework          | Req/sec<sup>1</sup> |   MBytes     |
 | ---------- | ---------------------------------- | ----------:| ------------:|
@@ -33,18 +34,20 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 | Java       | [Netty][netty]                     |    61 148  |   58.31  MB  |
 | Go         | [net/http][go]                     |    60 714  |   76.91  MB  |
 | C          | [Onion][onion]<sup>3</sup>         |    60 613  |   77.01  MB  |
-| Lua        | [OpenResty][resty]<sup>4</sup>     |    47 370  |   81.56  MB  |
+| Nim *patched*<sup>4</sup>|[AsyncHTTPServer][nim]|    50 531  |   24.10  MB  |
+| Lua        | [OpenResty][resty]<sup>5</sup>     |    47 370  |   81.56  MB  |
 | Rust       | [Iron][iron]                       |    46 869  |   50.76  MB  |
 | Erlang     | [Cowboy][cowboy]                   |    29 246  |   43.22  MB  |
-| Nim        | [AsyncHTTPServer][nim]<sup>5</sup> |    28 994  |   13.82  MB  |
-| Ruby       | [Puma][puma]<sup>6</sup>           |    24 539  |   17.79  MB  |
+| Nim        | [AsyncHTTPServer][nim]<sup>6</sup> |    28 994  |   13.82  MB  |
+| Ruby       | [Puma][puma]<sup>7</sup>           |    24 539  |   17.79  MB  |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> Using `echo` module.  
 <sup>3</sup> Running `hello` example with `static` path.  
-<sup>4</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>5</sup> *Nim*'s current implementation is single-thread only.  
-<sup>6</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>4</sup> patched version of *Nim* with [following pull request][pull].  
+<sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
+<sup>6</sup> *Nim*'s current implementation is single-thread only.  
+<sup>7</sup> Using several *Ruby* instances with `puma -w 4`.  
 
 
 ### License
