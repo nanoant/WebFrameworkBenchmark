@@ -20,6 +20,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 [3]: http://golang.org/pkg/net/http/
 [4]: https://github.com/davidmoreno/onion
 [5]: http://nim-lang.org
+[6]: http://puma.io
 
 [openresty]: http://openresty.org
 
@@ -30,6 +31,7 @@ Also wanted to test only framework overhead, that's why testing `Hello World`.
 | Go         | [net/http][3]                   |     60 714   |    77.01 MB  |
 | C          | [Onion][4]<sup>2</sup>          |     60 613   |    77.01 MB  |
 | Nim        | [AsyncHTTPServer][5]            |     28 994   |    13.82 MB  |
+| Ruby       | [Puma][6]                       |     24 539   |    17.79 MB  |
 
 
 <sup>1</sup> Ran on *OSX 10.10.3* and *Intel Core i5-2400S* 2.50GHz, 16 GB RAM.
