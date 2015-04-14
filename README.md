@@ -32,21 +32,21 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [iron]: http://ironframework.io
 [pull]: https://github.com/Araq/Nim/pull/2244
 
-|  Language    |        Framework        | Req/sec<sup>1</sup> |   MBytes    |
-| ------------ | ---------------------------------- | --------:| -----------:|
-| Java         | [Undertow][undertow]               |  74 040  |   96.73  MB |
-| Nim *M&S/PR*<sup>2</sup> | [AsyncHTTPServer][nim] |  67 330  |   46.89  MB |
-| Native/C     | [Nginx][echo]<sup>3</sup>          |  63 724  |  110.57  MB |
-| Java         | [Netty][netty]                     |  61 148  |   58.31  MB |
-| Go           | [net/http][go]                     |  60 714  |   76.91  MB |
-| C            | [Onion][onion]<sup>4</sup>         |  60 613  |   77.01  MB |
-| Lua          | [OpenResty][resty]<sup>5</sup>     |  47 370  |   81.56  MB |
-| Nim *PR*<sup>6</sup>     | [AsyncHTTPServer][nim] |  47 258  |   33.28  MB |
-| Rust         | [Iron][iron]                       |  46 869  |   50.76  MB |
-| Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  43 798  |   30.76  MB |
-| Erlang       | [Cowboy][cowboy]                   |  30 379  |   44.89  MB |
-| Nim<sup>8</sup>          | [AsyncHTTPServer][nim] |  28 994  |   13.82  MB |
-| Ruby         | [Puma][puma]<sup>9</sup>           |  24 539  |   17.79  MB |
+|  Language    |        Framework        | Req/sec<sup>1</sup> | MB/sec |
+| ------------ | ---------------------------------- | --------:| ------:|
+| Java         | [Undertow][undertow]               |  74 040  |        |
+| Nim *M&S/PR*<sup>2</sup> | [AsyncHTTPServer][nim] |  67 330  |        |
+| Native/C     | [Nginx][echo]<sup>3</sup>          |  63 724  |        |
+| Java         | [Netty][netty]                     |  61 148  |        |
+| Go           | [net/http][go]                     |  60 714  |        |
+| C            | [Onion][onion]<sup>4</sup>         |  60 613  |        |
+| Lua          | [OpenResty][resty]<sup>5</sup>     |  47 370  |        |
+| Nim *PR*<sup>6</sup>     | [AsyncHTTPServer][nim] |  47 258  |        |
+| Rust         | [Iron][iron]                       |  46 869  |        |
+| Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  43 798  |        |
+| Erlang       | [Cowboy][cowboy]                   |  30 822  |  2.97  |
+| Nim<sup>8</sup>          | [AsyncHTTPServer][nim] |  28 994  |        |
+| Ruby         | [Puma][puma]<sup>9</sup>           |  24 539  |        |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> *Nim* patched with [following pull request][pull],
