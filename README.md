@@ -28,28 +28,35 @@ dynamic `Hello World` world output.
 [iron]: http://ironframework.io
 [pull]: https://github.com/Araq/Nim/pull/2244
 
-|  Language  |        Framework          | Req/sec<sup>1</sup> |   MBytes     |
-| ---------- | ---------------------------------- | ----------:| ------------:|
-| Java       | [Undertow][undertow]               |    74 040  |   96.73  MB  |
-| Nim        | [AsyncHTTPServer][nim]<sup>2</sup> |    67 330  |   46.89  MB  |
-| Native/C   | [Nginx][echo]<sup>3</sup>          |    63 724  |  110.57  MB  |
-| Java       | [Netty][netty]                     |    61 148  |   58.31  MB  |
-| Go         | [net/http][go]                     |    60 714  |   76.91  MB  |
-| C          | [Onion][onion]<sup>4</sup>         |    60 613  |   77.01  MB  |
-| Lua        | [OpenResty][resty]<sup>5</sup>     |    47 370  |   81.56  MB  |
-| Rust       | [Iron][iron]                       |    46 869  |   50.76  MB  |
-| Erlang     | [Cowboy][cowboy]                   |    29 246  |   43.22  MB  |
-| Nim        | [AsyncHTTPServer][nim]<sup>6</sup> |    28 994  |   13.82  MB  |
-| Ruby       | [Puma][puma]<sup>7</sup>           |    24 539  |   17.79  MB  |
+|  Language    |        Framework        | Req/sec<sup>1</sup> |   MBytes    |
+| ------------ | ---------------------------------- | --------:| -----------:|
+| Java         | [Undertow][undertow]               |  74 040  |   96.73  MB |
+| Nim *M&S/PR*<sup>2</sup> | [AsyncHTTPServer][nim] |  67 330  |   46.89  MB |
+| Native/C     | [Nginx][echo]<sup>3</sup>          |  63 724  |  110.57  MB |
+| Java         | [Netty][netty]                     |  61 148  |   58.31  MB |
+| Go           | [net/http][go]                     |  60 714  |   76.91  MB |
+| C            | [Onion][onion]<sup>4</sup>         |  60 613  |   77.01  MB |
+| Lua          | [OpenResty][resty]<sup>5</sup>     |  47 370  |   81.56  MB |
+| Nim *PR*<sup>6</sup>     | [AsyncHTTPServer][nim] |  47 258  |   33.28  MB |
+| Rust         | [Iron][iron]                       |  46 869  |   50.76  MB |
+| Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  43 798  |   30.76  MB |
+| Erlang       | [Cowboy][cowboy]                   |  29 246  |   43.22  MB |
+| Nim<sup>8</sup>          | [AsyncHTTPServer][nim] |  28 994  |   13.82  MB |
+| Ruby         | [Puma][puma]<sup>9</sup>           |  24 539  |   17.79  MB |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
-<sup>2</sup> patched version of *Nim* with [following pull request][pull],
+<sup>2</sup> *Nim* patched with [following pull request][pull],
              using `--gc:markandsweep`, single-thread only.  
 <sup>3</sup> Using `echo` module.  
 <sup>4</sup> Running `hello` example with `static` path.  
 <sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>6</sup> *Nim* standard implementation, default GC, single-thread only.  
-<sup>7</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>6</sup> *Nim* patched with [following pull request][pull],
+             default RC GC, single-thread only.  
+<sup>7</sup> *Nim* standard implementation,
+             using `--gc:markandsweep`, single-thread only.  
+<sup>8</sup> *Nim* standard implementation,
+             default RC GC, single-thread only.  
+<sup>9</sup> Using several *Ruby* instances with `puma -w 4`.  
 
 
 ### Conclusions
