@@ -41,11 +41,11 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Go           | [net/http][go]                     |  60 714  |      |        |
 | C            | [Onion][onion]<sup>5</sup>         |  60 613  |      |        |
 | Nim *M&S*<sup>6</sup>    | [AsyncHTTPServer][nim] |  50 940  | 3.64 |   3.08 |
-| Nim *PR*<sup>7</sup>     | [AsyncHTTPServer][nim] |  47 696  | 3.41 |   7.09 |
-| Lua          | [OpenResty][resty]<sup>8</sup>     |  46 529  | 5.23 | 268.97<sup>9</sup> |
-| Rust         | [Iron][iron]                       |  46 869  |      |        |
+| Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>7</sup> |
+| Nim *PR*<sup>8</sup>     | [AsyncHTTPServer][nim] |  47 696  | 3.41 |   7.09 |
+| Lua          | [OpenResty][resty]<sup>9</sup>     |  46 529  | 5.23 | 268.97<sup>10</sup> |
 | Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
-| Nim<sup>10</sup>         | [AsyncHTTPServer][nim] |  29 866  | 2.14 |   9.43 |
+| Nim<sup>11</sup>         | [AsyncHTTPServer][nim] |  29 866  | 2.14 |   9.43 |
 | Ruby         | [Puma][puma]<sup>11</sup>          |  24 539  |      |        |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
@@ -58,12 +58,14 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
              using `--gc:markandsweep`, single-thread only.  
 <sup>7</sup> *Nim* patched with [following pull request][pull],
              default RC GC, single-thread only.  
-<sup>8</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>9</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
+<sup>8</sup> *Rust* *Iron* has some amazing super-stable latency
+             in longer runs.  
+<sup>9</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
+<sup>10</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
              run latency goes up.  
-<sup>10</sup> *Nim* standard implementation,
+<sup>11</sup> *Nim* standard implementation,
              default RC GC, single-thread only.  
-<sup>11</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>12</sup> Using several *Ruby* instances with `puma -w 4`.  
 
 
 ### Conclusions
