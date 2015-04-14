@@ -40,7 +40,7 @@ dynamic `Hello World` world output.
 | Nim *PR*<sup>6</sup>     | [AsyncHTTPServer][nim] |  47 258  |   33.28  MB |
 | Rust         | [Iron][iron]                       |  46 869  |   50.76  MB |
 | Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  43 798  |   30.76  MB |
-| Erlang       | [Cowboy][cowboy]                   |  29 246  |   43.22  MB |
+| Erlang       | [Cowboy][cowboy]                   |  30 379  |   44.89  MB |
 | Nim<sup>8</sup>          | [AsyncHTTPServer][nim] |  28 994  |   13.82  MB |
 | Ruby         | [Puma][puma]<sup>9</sup>           |  24 539  |   17.79  MB |
 
