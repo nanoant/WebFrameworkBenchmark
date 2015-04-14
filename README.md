@@ -13,6 +13,10 @@ I just found [Techempower's Benchmark][techempower] sources overcomplicated.
 Also wanted to test only framework overhead, that's why testing just trivial
 dynamic `Hello World` world output.
 
+Just to not raise a controversy, I want also to emphasize this benchmark is
+simple & native and completely skips some unique features of some frameworks
+and languages, such as Erlang's natural clustering and hot-swap capabilities.
+
 
 ### Results
 
@@ -61,13 +65,18 @@ dynamic `Hello World` world output.
 
 ### Conclusions
 
-Seems that *Nim* is going to offer fastest web framework solution, due its
-amazing compile-time term rewriting capabilities and mixed GC and normal stack
-allocation.
+As expected *Java* solutions outperform any other.
+
+*Nim* however comes in 2nd place - showing its great potential as an ultimate
+web framework solution, due its amazing compile-time term rewriting
+capabilities and mixed GC and normal stack allocation.
 
 It has to be also emphasized that current *Nim* implementation is
 single-threaded, while *Java* solutions are multi-threaded.
 
+It has to be also observed that different frameworks generated different amount
+of data due different HTTP headers being used. Tuning headers could possibly
+change the performance numbers slightly.
 
 ### License
 
