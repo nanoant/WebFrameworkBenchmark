@@ -32,35 +32,36 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [iron]: http://ironframework.io
 [pull]: https://github.com/Araq/Nim/pull/2244
 
-|  Language    |        Framework        | Req/sec<sup>1</sup> | MB/sec |
-| ------------ | ---------------------------------- | --------:| ------:|
-| Java         | [Undertow][undertow]               |  74 040  |        |
-| Nim *M&S/PR*<sup>2</sup> | [AsyncHTTPServer][nim] |  67 330  |        |
-| Native/C     | [Nginx][echo]<sup>3</sup>          |  63 724  |        |
-| Java         | [Netty][netty]                     |  61 148  |        |
-| Go           | [net/http][go]                     |  60 714  |        |
-| C            | [Onion][onion]<sup>4</sup>         |  60 613  |        |
-| Lua          | [OpenResty][resty]<sup>5</sup>     |  47 370  |        |
-| Nim *PR*<sup>6</sup>     | [AsyncHTTPServer][nim] |  47 258  |        |
-| Rust         | [Iron][iron]                       |  46 869  |        |
-| Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  43 798  |        |
-| Erlang       | [Cowboy][cowboy]                   |  30 822  |  2.97  |
-| Nim<sup>8</sup>          | [AsyncHTTPServer][nim] |  28 994  |        |
-| Ruby         | [Puma][puma]<sup>9</sup>           |  24 539  |        |
+|  Language    |        Framework        | Req/sec<sup>1</sup> |MB/sec| 99% ms<sup>2</sup>|
+| ------------ | ---------------------------------- | --------:| ----:| ------:|
+| Java         | [Undertow][undertow]               |  74 040  |      |        |
+| Nim *M&S/PR*<sup>3</sup> | [AsyncHTTPServer][nim] |  68 434  | 4.89 |   2.49 |
+| Native/C     | [Nginx][echo]<sup>4</sup>          |  63 724  |      |        |
+| Java         | [Netty][netty]                     |  61 148  |      |        |
+| Go           | [net/http][go]                     |  60 714  |      |        |
+| C            | [Onion][onion]<sup>5</sup>         |  60 613  |      |        |
+| Lua          | [OpenResty][resty]<sup>6</sup>     |  47 370  |      |        |
+| Nim *M&S*<sup>7</sup>    | [AsyncHTTPServer][nim] |  50 940  | 3.64 |   3.08 |
+| Nim *PR*<sup>8</sup>     | [AsyncHTTPServer][nim] |  47 696  | 3.41 |   7.09 |
+| Rust         | [Iron][iron]                       |  46 869  |      |        |
+| Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
+| Nim<sup>9</sup>          | [AsyncHTTPServer][nim] |  29 866  | 2.14 |   9.43 |
+| Ruby         | [Puma][puma]<sup>10</sup>          |  24 539  |      |        |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
-<sup>2</sup> *Nim* patched with [following pull request][pull],
+<sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
+<sup>3</sup> *Nim* patched with [following pull request][pull],
              using `--gc:markandsweep`, single-thread only.  
-<sup>3</sup> Using `echo` module.  
-<sup>4</sup> Running `hello` example with `static` path.  
-<sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>6</sup> *Nim* patched with [following pull request][pull],
-             default RC GC, single-thread only.  
+<sup>4</sup> Using `echo` module.  
+<sup>5</sup> Running `hello` example with `static` path.  
+<sup>6</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
 <sup>7</sup> *Nim* standard implementation,
              using `--gc:markandsweep`, single-thread only.  
-<sup>8</sup> *Nim* standard implementation,
+<sup>8</sup> *Nim* patched with [following pull request][pull],
              default RC GC, single-thread only.  
-<sup>9</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>9</sup> *Nim* standard implementation,
+             default RC GC, single-thread only.  
+<sup>10</sup> Using several *Ruby* instances with `puma -w 4`.  
 
 
 ### Conclusions
