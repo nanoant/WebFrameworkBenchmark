@@ -37,8 +37,8 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Java         | [Undertow][undertow]               |  73 931  | 9.66 |   1.73 |
 | Nim *M&S/PR*<sup>3</sup> | [AsyncHTTPServer][nim] |  68 434  | 4.89 |   2.49 |
 | Native/C     | [Nginx][echo]<sup>4</sup>          |  61 568  | 6.98 |   3.54 |
-| Java         | [Netty][netty]                     |  61 148  |      |        |
-| Go           | [net/http][go]                     |  60 714  |      |        |
+| Java         | [Netty][netty]                     |  61 406  | 5.86 |   3.12 |
+| Go           | [net/http][go]                     |  61 150  | 7.76 |   7.83 |
 | C            | [Onion][onion]<sup>5</sup>         |  60 613  |      |        |
 | Nim *M&S*<sup>6</sup>    | [AsyncHTTPServer][nim] |  50 940  | 3.64 |   3.08 |
 | Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>7</sup> |
