@@ -46,7 +46,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Lua          | [OpenResty][resty]<sup>9</sup>     |  46 529  | 5.23 | 268.97<sup>10</sup> |
 | Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
 | Nim<sup>11</sup>         | [AsyncHTTPServer][nim] |  29 866  | 2.14 |   9.43 |
-| Ruby         | [Puma][puma]<sup>11</sup>          |  24 539  |      |        |
+| Ruby         | [Puma][puma]<sup>12</sup>          |  26 343  | 1.91 | 103.98 |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
