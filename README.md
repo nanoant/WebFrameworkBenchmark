@@ -50,16 +50,17 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
+
 <sup>3</sup> *Nim* patched with [following pull request][pull],
              using `--gc:markandsweep`, single-thread only.  
 <sup>4</sup> Using `echo` module.  
 <sup>5</sup> Running `hello` example with `static` path.  
 <sup>6</sup> *Nim* standard implementation,
              using `--gc:markandsweep`, single-thread only.  
-<sup>7</sup> *Nim* patched with [following pull request][pull],
-             default RC GC, single-thread only.  
-<sup>8</sup> *Rust* *Iron* has some amazing super-stable latency
+<sup>7</sup> *Rust* *Iron* has some amazing super-stable latency
              in longer runs.  
+<sup>8</sup> *Nim* patched with [following pull request][pull],
+             default RC GC, single-thread only.  
 <sup>9</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
 <sup>10</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
              run latency goes up.  
