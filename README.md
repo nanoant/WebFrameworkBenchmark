@@ -39,7 +39,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Native/C     | [Nginx][echo]<sup>4</sup>          |  61 568  | 6.98 |   3.54 |
 | Java         | [Netty][netty]                     |  61 406  | 5.86 |   3.12 |
 | Go           | [net/http][go]                     |  61 150  | 7.76 |   7.83 |
-| C            | [Onion][onion]<sup>5</sup>         |  60 613  |      |        |
+| C            | [Onion][onion]<sup>5</sup>         |  52 430  | 9.20 |   2.21 |
 | Nim *M&S*<sup>6</sup>    | [AsyncHTTPServer][nim] |  50 940  | 3.64 |   3.08 |
 | Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>7</sup> |
 | Nim *PR*<sup>8</sup>     | [AsyncHTTPServer][nim] |  47 696  | 3.41 |   7.09 |
