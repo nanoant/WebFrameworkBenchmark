@@ -67,6 +67,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
              default RC GC, single-thread only.  
 <sup>12</sup> Using several *Ruby* instances with `puma -w 4`.  
 
+**NOTE**: Detailed results can be found in [`results/`](results).
 
 ### Conclusions
 
