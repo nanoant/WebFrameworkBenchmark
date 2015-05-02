@@ -30,43 +30,34 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [echo]: http://wiki.nginx.org/HttpEchoModule
 [resty]: http://openresty.org
 [iron]: http://ironframework.io
-[pull]: https://github.com/Araq/Nim/pull/2244
 
 |  Language    |        Framework        | Req/sec<sup>1</sup> |MB/sec| 99% ms<sup>2</sup>|
 | ------------ | ---------------------------------- | --------:| ----:| ------:|
 | Java         | [Undertow][undertow]               |  73 931  | 9.66 |   1.73 |
-| Nim *M&S/PR*<sup>3</sup> | [AsyncHTTPServer][nim] |  68 434  | 4.89 |   2.49 |
+| Nim *M&S*<sup>3</sup> | [AsyncHTTPServer][nim]    |  67 034  | 4.79 |   2.57 |
 | Native/C     | [Nginx][echo]<sup>4</sup>          |  61 568  | 6.98 |   3.54 |
 | Java         | [Netty][netty]                     |  61 406  | 5.86 |   3.12 |
 | Go           | [net/http][go]                     |  61 150  | 7.76 |   7.83 |
 | C            | [Onion][onion]<sup>5</sup>         |  52 430  | 9.20 |   2.21 |
-| Nim *M&S*<sup>6</sup>    | [AsyncHTTPServer][nim] |  50 940  | 3.64 |   3.08 |
-| Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>7</sup> |
-| Nim *PR*<sup>8</sup>     | [AsyncHTTPServer][nim] |  47 696  | 3.41 |   7.09 |
-| Lua          | [OpenResty][resty]<sup>9</sup>     |  46 529  | 5.23 | 268.97<sup>10</sup> |
+| Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>6</sup> |
+| Nim<sup>7</sup> | [AsyncHTTPServer][nim]          |  47 880  | 3.42 |   7.23 |
+| Lua          | [OpenResty][resty]<sup>8</sup>     |  46 529  | 5.23 | 268.97<sup>9</sup> |
 | Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
-| Nim<sup>11</sup>         | [AsyncHTTPServer][nim] |  29 866  | 2.14 |   9.43 |
-| Ruby         | [Puma][puma]<sup>12</sup>          |  26 343  | 1.91 | 103.98 |
+| Ruby         | [Puma][puma]<sup>10</sup>          |  26 343  | 1.91 | 103.98 |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
 
-<sup>3</sup> *Nim* patched with [following pull request][pull],
-             using `--gc:markandsweep`, single-thread only.  
+<sup>3</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
 <sup>4</sup> Using `echo` module.  
 <sup>5</sup> Running `hello` example with `static` path.  
-<sup>6</sup> *Nim* standard implementation,
-             using `--gc:markandsweep`, single-thread only.  
-<sup>7</sup> *Rust* *Iron* has some amazing super-stable latency
+<sup>6</sup> *Rust* *Iron* has some amazing super-stable latency
              in longer runs.  
-<sup>8</sup> *Nim* patched with [following pull request][pull],
-             default RC GC, single-thread only.  
-<sup>9</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>10</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
+<sup>7</sup> *Nim* using standard RC garbage collection, single-thread only.  
+<sup>8</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
+<sup>9</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
              run latency goes up.  
-<sup>11</sup> *Nim* standard implementation,
-             default RC GC, single-thread only.  
-<sup>12</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>10</sup> Using several *Ruby* instances with `puma -w 4`.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
