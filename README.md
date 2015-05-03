@@ -30,6 +30,9 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [echo]: http://wiki.nginx.org/HttpEchoModule
 [resty]: http://openresty.org
 [iron]: http://ironframework.io
+[jester]: https://github.com/dom96/jester
+[jesterpr1]: https://github.com/dom96/jester/pull/32
+[jesterpr2]: https://github.com/dom96/jester/pull/33
 
 |  Language    |        Framework        | Req/sec<sup>1</sup> |MB/sec| 99% ms<sup>2</sup>|
 | ------------ | ---------------------------------- | --------:| ----:| ------:|
@@ -44,6 +47,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Lua          | [OpenResty][resty]<sup>8</sup>     |  46 529  | 5.23 | 268.97<sup>9</sup> |
 | Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
 | Ruby         | [Puma][puma]<sup>10</sup>          |  26 343  | 1.91 | 103.98 |
+| Nim          | [Jester][jester]<sup>11</sup>      |  21 572  | 1.54 |  11.12 |
 
 <sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
 <sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
@@ -58,6 +62,8 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 <sup>9</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
              run latency goes up.  
 <sup>10</sup> Using several *Ruby* instances with `puma -w 4`.  
+<sup>11</sup> *Jester* is some higher-level Web framework for *Nim*. Using two
+              merged PRs [1][jesterpr1], [2][jesterpr2] for tests.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
