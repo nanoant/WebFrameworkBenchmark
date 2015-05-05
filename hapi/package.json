@@ -1,0 +1,14 @@
+{
+  "name": "hapi-bench",
+  "version": "1.0.0",
+  "description": "Simple hello world benchmark",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "author": "Marcos Bérgamo <marcos@thedon.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^8.4.0"
+  }
+}
