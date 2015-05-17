@@ -22,6 +22,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 
 [undertow]: http://undertow.io
 [netty]: http://netty.io
+[node]: https://nodejs.org/api/cluster.html
 [go]: http://golang.org/pkg/net/http/
 [onion]: https://github.com/davidmoreno/onion
 [cowboy]: http://ninenines.eu/docs/en/cowboy/1.0/guide/getting_started/
@@ -34,36 +35,31 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [jesterpr1]: https://github.com/dom96/jester/pull/32
 [jesterpr2]: https://github.com/dom96/jester/pull/33
 
-|  Language    |        Framework        | Req/sec<sup>1</sup> |MB/sec| 99% ms<sup>2</sup>|
-| ------------ | ---------------------------------- | --------:| ----:| ------:|
-| Java         | [Undertow][undertow]               |  73 931  | 9.66 |   1.73 |
-| Nim *M&S*<sup>3</sup> | [AsyncHTTPServer][nim]    |  67 034  | 4.79 |   2.57 |
-| Native/C     | [Nginx][echo]<sup>4</sup>          |  61 568  | 6.98 |   3.54 |
-| Java         | [Netty][netty]                     |  61 406  | 5.86 |   3.12 |
-| Go           | [net/http][go]                     |  61 150  | 7.76 |   7.83 |
-| C            | [Onion][onion]<sup>5</sup>         |  52 430  | 9.20 |   2.21 |
-| Rust         | [Iron][iron]                       |  48 577  | 5.28 |   0.44<sup>6</sup> |
-| Nim<sup>7</sup> | [AsyncHTTPServer][nim]          |  47 880  | 3.42 |   7.23 |
-| Lua          | [OpenResty][resty]<sup>8</sup>     |  46 529  | 5.23 | 268.97<sup>9</sup> |
-| Erlang       | [Cowboy][cowboy]                   |  30 822  | 2.97 |  20.16 |
-| Ruby         | [Puma][puma]<sup>10</sup>          |  26 343  | 1.91 | 103.98 |
-| Nim          | [Jester][jester]<sup>11</sup>      |  21 572  | 1.54 |  11.12 |
+|  Language     |        Framework         | Req/sec[^1]| MB/sec|  99% ms[^2]|
+| ------------- | ------------------------ | ----------:| -----:| ----------:|
+| Java          | [Undertow][undertow]     |   616 547  | 80.55 |       3.29 |
+| C             | [Onion][onion]       [^3]|   483 824  | 90.90 |       2.82 |
+| Java          | [Netty][netty]           |   422 580  | 40.30 |       4.08 |
+| Native        | [Nginx][echo]        [^4]|   381 368  | 43.26 |      24.24 |
+| Go            | [net/http][go]           |   270 253  | 34.28 |       2.52 |
+| Lua           | [OpenResty][resty]   [^5]|   269 205  | 30.28 |      43.35 |
+| Rust          | [Iron][iron]             |   178 789  | 19.44 |[^6]   0.05 |
+| Erlang        | [Cowboy][cowboy]         |   146 185  | 14.07 |       5.81 |
+| Node          | [HTTP][node]             |   112 086  | 13.79 |      11.98 |
+| Nim *M&S* [^7]| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |       1.33 |
+| Ruby          | [Puma][puma]         [^8]|    83 053  |  6.02 |       6.14 |
+| Nim       [^9]| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |       4.71 |
 
-<sup>1</sup> *OSX 10.10.3*, *Intel Core i5-2400S* 2.50GHz, 16 GB RAM  
-<sup>2</sup> latency distribution value at 99% in milliseconds (towards worst)
+[^1]: *Ubuntu 14.04 LTS*, *Linux 3.16*, *Xeon E5-1650* @ 3.50GHz, 32 GB RAM
+[^2]: latency distribution value at 99% in milliseconds (towards worst)
 
-<sup>3</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
-<sup>4</sup> Using `echo` module.  
-<sup>5</sup> Running `hello` example with `static` path.  
-<sup>6</sup> *Rust* *Iron* has some amazing super-stable latency
-             in longer runs.  
-<sup>7</sup> *Nim* using standard RC garbage collection, single-thread only.  
-<sup>8</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>9</sup> There seem to be a problem with *Nginx*/*OpenResty*, after longer
-             run latency goes up.  
-<sup>10</sup> Using several *Ruby* instances with `puma -w 4`.  
-<sup>11</sup> *Jester* is some higher-level Web framework for *Nim*. Using two
-              merged PRs [1][jesterpr1], [2][jesterpr2] for tests.  
+[^3]: Running `hello` example with `static` path.
+[^4]: Using *Nginx* `echo` module.
+[^5]: *OpenResty* is in fact *Nginx* with *Lua* module.
+[^6]: *Rust* *Iron* has some amazing super-stable latency in longer runs.
+[^7]: *Nim* using `--gc:markandsweep`, single-thread only.
+[^8]: Using several *Ruby* instances with `puma -w 12`.
+[^9]: *Nim* using standard RC garbage collection, single-thread only.
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
@@ -95,10 +91,10 @@ This benchmark is provided under MIT license:
 > distribute, sublicense, and/or sell copies of the Software, and to
 > permit persons to whom the Software is furnished to do so, subject to
 > the following conditions:
-> 
+>
 > The above copyright notice and this permission notice shall be
 > included in all copies or substantial portions of the Software.
-> 
+>
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 > EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 > MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
