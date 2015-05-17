@@ -3,7 +3,11 @@ var sys = require('sys'),
     http = require('http'),
     numCPUs = require('os').cpus().length;
 
+http.globalAgent.maxSockets = 1024;
+cluster.schedulingPolicy = cluster.SCHED_NONE;
+
 if (cluster.isMaster) {
+  console.log('forking on ' + numCPUs + ' CPUs');
   for (var i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
@@ -15,5 +19,13 @@ if (cluster.isMaster) {
     res.writeHead(200);
     res.write('Hello World');
     res.end();
-  }).listen(8080);
+  })
+  .on('error', function(e) {
+    if (e.code == 'EADDRINUSE') {
+      console.log('Failed to bind to port - address already in use ');
+      process.exit(1);
+    }
+    console.log('Error ' + e);
+  }) 
+  .listen(8080);
 }

@@ -1,9 +1,13 @@
 var sys = require('sys'), 
     cluster = require('cluster'),
-    numCPUs = require('os').cpus().length,
-    Hapi = require('hapi');
+    Hapi = require('hapi'),
+    numCPUs = require('os').cpus().length;
+
+cluster.schedulingPolicy = cluster.SCHED_NONE;
+
 
 if (cluster.isMaster) {
+  console.log('forking on ' + numCPUs + ' CPUs');
   for (var i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
@@ -15,7 +19,6 @@ if (cluster.isMaster) {
   server.connection({
     port: 8080
   });
-
   server.route({
     method: 'GET',
     path: '/',
@@ -23,6 +26,5 @@ if (cluster.isMaster) {
       reply('Hello World');
     }
   });
-
   server.start();
 }
