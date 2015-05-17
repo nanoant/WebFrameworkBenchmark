@@ -50,16 +50,16 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Ruby          | [Puma][puma]         [^8]|    83 053  |  6.02 |       6.14 |
 | Nim       [^9]| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |       4.71 |
 
-[^1]: *Ubuntu 14.04 LTS*, *Linux 3.16*, *Xeon E5-1650* @ 3.50GHz, 32 GB RAM
-[^2]: latency distribution value at 99% in milliseconds (towards worst)
-
-[^3]: Running `hello` example with `static` path.
-[^4]: Using *Nginx* `echo` module.
-[^5]: *OpenResty* is in fact *Nginx* with *Lua* module.
-[^6]: *Rust* *Iron* has some amazing super-stable latency in longer runs.
-[^7]: *Nim* using `--gc:markandsweep`, single-thread only.
-[^8]: Using several *Ruby* instances with `puma -w 12`.
-[^9]: *Nim* using standard RC garbage collection, single-thread only.
+[^1]: *Ubuntu 14.04 LTS*, *Linux 3.16*, *Xeon E5-1650* @ 3.50GHz, 32 GB RAM  
+[^2]: latency distribution value at 99% in milliseconds (towards worst)  
+  
+[^3]: Running `hello` example with `static` path.  
+[^4]: Using *Nginx* `echo` module.  
+[^5]: *OpenResty* is in fact *Nginx* with *Lua* module.  
+[^6]: *Rust* *Iron* has some amazing super-stable latency in longer runs.  
+[^7]: *Nim* using `--gc:markandsweep`, single-thread only.  
+[^8]: Using several *Ruby* instances with `puma -w 12`.  
+[^9]: *Nim* using standard RC garbage collection, single-thread only.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
