@@ -2,4 +2,12 @@
 
 cd $(dirname $0)
 
-GOMAXPROCS=8 exec go run helloworldserver.go
+. ../common/threads.sh
+
+if [ -z "$(type -p go)" -a -x /usr/local/go/bin/go ]; then
+	go=/usr/local/go/bin/go
+else
+	go=go
+fi
+
+GOMAXPROCS=$threads exec $go run helloworldserver.go
