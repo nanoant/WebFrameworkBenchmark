@@ -32,23 +32,23 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [resty]: http://openresty.org
 [iron]: http://ironframework.io
 [jester]: https://github.com/dom96/jester
-[jesterpr1]: https://github.com/dom96/jester/pull/32
-[jesterpr2]: https://github.com/dom96/jester/pull/33
 
-|  Language     |        Framework         | Req/sec[^1]| MB/sec|  99% ms[^2]|
-| ------------- | ------------------------ | ----------:| -----:| ----------:|
-| Java          | [Undertow][undertow]     |   616 547  | 80.55 |       3.29 |
-| C             | [Onion][onion]       [^3]|   483 824  | 90.90 |       2.82 |
-| Java          | [Netty][netty]           |   422 580  | 40.30 |       4.08 |
-| Native        | [Nginx][echo]        [^4]|   381 368  | 43.26 |      24.24 |
-| Go            | [net/http][go]           |   270 253  | 34.28 |       2.52 |
-| Lua           | [OpenResty][resty]   [^5]|   269 205  | 30.28 |      43.35 |
-| Rust          | [Iron][iron]             |   178 789  | 19.44 |[^6]   0.05 |
-| Erlang        | [Cowboy][cowboy]         |   146 185  | 14.07 |       5.81 |
-| Node          | [HTTP][node]             |   112 086  | 13.79 |      11.98 |
-| Nim *M&S* [^7]| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |       1.33 |
-| Ruby          | [Puma][puma]         [^8]|    83 053  |  6.02 |       6.14 |
-| Nim       [^9]| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |       4.71 |
+|  Language     |        Framework         | Req/sec[^1]| MB/sec| 99% ms[^2]|
+| ------------- | ------------------------ | ----------:| -----:| ---------:|
+| Java          | [Undertow][undertow]     |   616 547  | 80.55 |      3.29 |
+| C             | [Onion][onion]       [^3]|   483 824  | 90.90 |      2.82 |
+| Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08 |
+| Native        | [Nginx][echo]        [^4]|   381 368  | 43.26 |     24.24 |
+| Go            | [net/http][go]           |   270 253  | 34.28 |      2.52 |
+| Lua           | [OpenResty][resty]   [^5]|   269 205  | 30.28 |     43.35 |
+| Rust          | [Iron][iron]             |   178 789  | 19.44 |[^6]  0.05 |
+| Erlang        | [Cowboy][cowboy]         |   146 185  | 14.07 |      5.81 |
+| Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98 |
+| Nim m&s   [^7]| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33 |
+| Nim m&s   [^7]| [Jester][nim]        [^8]|    83 753  |  5.99 |      1.50 |
+| Ruby          | [Puma][puma]         [^9]|    83 053  |  6.02 |      6.14 |
+| Nim      [^10]| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71 |
+| Nim      [^10]| [Jester][jester]         |    42 698  |  3.05 |      5.42 |
 
 [^1]: *Ubuntu 14.04 LTS*, *Linux 3.16*, *Xeon E5-1650* @ 3.50GHz, 32 GB RAM  
 [^2]: latency distribution value at 99% in milliseconds (towards worst)  
@@ -58,8 +58,9 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [^5]: *OpenResty* is in fact *Nginx* with *Lua* module.  
 [^6]: *Rust* *Iron* has some amazing super-stable latency in longer runs.  
 [^7]: *Nim* using `--gc:markandsweep`, single-thread only.  
-[^8]: Using several *Ruby* instances with `puma -w 12`.  
-[^9]: *Nim* using standard RC garbage collection, single-thread only.  
+[^8]: *Jester* is some higher-level web framework for Nim.  
+[^9]: Using several *Ruby* instances with `puma -w 12`.  
+[^10]: *Nim* using standard RC garbage collection, single-thread only.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
