@@ -71,14 +71,14 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 
 ### Conclusions
 
-As expected *Java* solutions outperform any other.
+As expected *Java* solutions outperform any other. 2nd place is occupied by
+native C *Onion* framework, which is very interesting solution if you want to
+create small web apps with no dependencies.
 
-*Nim* however comes in 2nd place - showing its great potential as an ultimate
-web framework solution, due its amazing compile-time term rewriting
-capabilities and mixed GC and normal stack allocation.
-
-It has to be also emphasized that current *Nim* implementation is
-single-threaded, while *Java* solutions are multi-threaded.
+One should also notice *Nim* performance, which compares to *Node* & *Ruby*,
+but runs only on single core! (1 of 12). *Nim* and its async HTTP server module
+are very young projects, and multi-threaded version is already in plans. It has
+great potential to be next no. 1 in next iteration of this benchmark.
 
 It has to be also observed that different frameworks generated different amount
 of data due different HTTP headers being used. Tuning headers could possibly
