@@ -82,11 +82,38 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
+
+### Benchmarking details
+
+Each web framework is expected to return minimum set of headers including
+`Content-Type`, eg.:
+
+~~~
+$ curl -i localhost:8080
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Length: 11
+Content-Type: text/plain
+Date: Tue, 24 Nov 2015 17:32:30 GMT
+
+Hello World
+~~~
+
+Some frameworks add extra headers such as `Server` or `Expire` by default,
+which are not required by HTTP 1.1 specification. If possible we use some
+settings or tweaks to remove them as more headers (so more data) will have
+negative impact on performance.
+
+Effectively this benchmark tests solely the framework overhead itself. We are
+**not** testing any database access or JSON serialization performance.
+
+
 ### Conclusions
 
-As expected *Java* solutions outperform any other. 2nd place is occupied by
-native C *Onion* framework, which is very interesting solution if you want to
-create small web apps with no dependencies.
+As expected *Java* solutions outperform any other. 2nd & 3rd places are
+occupied by native C frameworks - *libmicrohttpd* and *Onion*, which are very
+interesting solutions if you want to create small web apps with minimal
+dependencies.
 
 One should also notice *Nim* performance, which compares to *Node* & *Ruby*,
 but runs only on single core! (1 of 12). *Nim* and its async HTTP server module
@@ -94,8 +121,8 @@ are very young projects, and multi-threaded version is already in plans. It has
 great potential to be next no. 1 in next iteration of this benchmark.
 
 It has to be also observed that different frameworks generated different amount
-of data due different HTTP headers being used. Tuning headers could possibly
-change the performance numbers slightly.
+of data due different HTTP headers being used.
+
 
 ### License
 
