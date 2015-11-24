@@ -4,3 +4,6 @@
 [submodule "onion/lib/onion"]
 	path = onion/lib/onion
 	url = git://github.com/davidmoreno/onion.git
+[submodule "crow/lib/crow"]
+	path = crow/lib/crow
+	url = https://github.com/ipkn/crow.git

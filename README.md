@@ -34,6 +34,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [jester]: https://github.com/dom96/jester
 [vibed]: http://vibed.org
 [dmd]: https://dlang.org/download.html
+[crow]: https://github.com/ipkn/crow
 
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
@@ -43,6 +44,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Native        | [Nginx][echo]      <sup>4|   381 368  | 43.26 |     24.24   |
 | Go            | [net/http][go]           |   270 253  | 34.28 |      2.52   |
 | Lua           | [OpenResty][resty] <sup>5|   269 205  | 30.28 |     43.35   |
+| C++           | [Crow][crow]             |   256 552  | 31.32 |     12.28   |
 | Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>6|
 | Erlang        | [Cowboy][cowboy]   <sup>7|   163 521  | 24.01 |      5.41   |
 | Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98   |
