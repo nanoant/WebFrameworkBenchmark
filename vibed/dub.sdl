@@ -1,0 +1,6 @@
+name "vibed"
+description "A simple vibe.d server application."
+copyright "Copyright © 2015, ono"
+authors "ono"
+dependency "vibe-d" version="~>0.7.23"
+versions "VibeDefaultMain"

@@ -32,6 +32,8 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [resty]: http://openresty.org
 [iron]: http://ironframework.io
 [jester]: https://github.com/dom96/jester
+[vibed]: http://vibed.org
+[dmd]: https://dlang.org/download.html
 
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
@@ -47,8 +49,10 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Nim m&s <sup>8| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33   |
 | Nim m&s <sup>8| [Jester][nim]      <sup>9|    83 753  |  5.99 |      1.50   |
 | Ruby          | [Puma][puma]      <sup>10|    83 053  |  6.02 |      6.14   |
-| Nim    <sup>11| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71   |
-| Nim    <sup>11| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
+| D ldc2 <sup>11| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
+| D dmd  <sup>12| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
+| Nim    <sup>13| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71   |
+| Nim    <sup>13| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
 
 <sup>1</sup> *Ubuntu 14.04 LTS*, *Linux 3.16*,
              *Xeon E5-1650* @ 3.50GHz, 32 GB RAM  
@@ -65,7 +69,9 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 <sup>8</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
 <sup>9</sup> *Jester* is some higher-level web framework for Nim.  
 <sup>10</sup> Using several *Ruby* instances with `puma -w 12`.  
-<sup>11</sup> *Nim* using standard RC garbage collection, single-thread only.  
+<sup>11</sup> *D* language using [LDC2](dmd) compiler v0.16.1 (LLVM 3.7.0).  
+<sup>12</sup> *D* language using standard [DMD](dmd) compiler v2.069.1.  
+<sup>13</sup> *Nim* using standard RC garbage collection, single-thread only.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
