@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-. ../common/threads.sh
+. ../../common/threads.sh
 
 if [ -z "$(type -p go)" -a -x /usr/local/go/bin/go ]; then
 	go=/usr/local/go/bin/go
