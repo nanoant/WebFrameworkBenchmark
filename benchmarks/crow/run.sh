@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+cd $(dirname $0)
 set -x
 c++ -O3 \
 	-std=c++11 \
@@ -7,4 +8,6 @@ c++ -O3 \
 	-o helloworld \
 	helloworld.cpp \
 	-lboost_system \
-	-lpthread
+	-lpthread \
+	&& \
+exec ./helloworld

@@ -10,4 +10,5 @@ else
 	go=go
 fi
 
+set -x
 GOMAXPROCS=$threads exec $go run helloworldserver.go
