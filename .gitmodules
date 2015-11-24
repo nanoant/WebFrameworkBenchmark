@@ -1,12 +1,12 @@
-[submodule "onion/lib/libev"]
-	path = onion/lib/libev
-	url = git://github.com/scunningham/libev.git
-[submodule "onion/lib/onion"]
-	path = onion/lib/onion
-	url = git://github.com/davidmoreno/onion.git
-[submodule "crow/lib/crow"]
-	path = crow/lib/crow
-	url = https://github.com/ipkn/crow.git
-[submodule "kore/lib/kore"]
-	path = kore/lib/kore
-	url = https://github.com/jorisvink/kore
+[submodule "benchmarks/onion/lib/libev"]
+	path = benchmarks/onion/lib/libev
+	url = ../../scunningham/libev.git
+[submodule "benchmarks/onion/lib/onion"]
+	path = benchmarks/onion/lib/onion
+	url = ../../davidmoreno/onion.git
+[submodule "benchmarks/crow/lib/crow"]
+	path = benchmarks/crow/lib/crow
+	url = ../../ipkn/crow.git
+[submodule "benchmarks/kore/lib/kore"]
+	path = benchmarks/kore/lib/kore
+	url = ../../jorisvink/kore.git
