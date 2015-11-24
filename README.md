@@ -36,9 +36,11 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [dmd]: https://dlang.org/download.html
 [crow]: https://github.com/ipkn/crow
 [kore]: https://kore.io
+[mhttpd]: https://www.gnu.org/software/libmicrohttpd/
 
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
+| C             | [libmicrohttpd][mhttpd]  |   624 051  | 29.76 |      2.42   |
 | Java          | [Undertow][undertow]     |   616 547  | 80.55 |      3.29   |
 | C             | [Onion][onion]     <sup>3|   483 824  | 90.90 |      2.82   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
