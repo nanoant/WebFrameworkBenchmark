@@ -85,8 +85,8 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 
 ### Benchmarking details
 
-Each web framework is expected to return minimum set of headers including
-`Content-Type`, eg.:
+Each web framework is expected to respond with `Hello World` content of type
+`text/plain` with minimum set of headers required by HTTP 1.1 specification:
 
 ~~~
 $ curl -i localhost:8080
@@ -105,7 +105,10 @@ settings or tweaks to remove them as more headers (so more data) will have
 negative impact on performance.
 
 Effectively this benchmark tests solely the framework overhead itself. We are
-**not** testing any database access or JSON serialization performance.
+**not** testing any database access or JSON serialization performance. We are
+also avoiding some extra optimizations, such as caching response memory
+structures which could improve performance a bit, but contradicts dynamic
+behavior of tested frameworks.
 
 
 ### Conclusions
