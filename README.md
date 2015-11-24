@@ -35,6 +35,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [vibed]: http://vibed.org
 [dmd]: https://dlang.org/download.html
 [crow]: https://github.com/ipkn/crow
+[kore]: https://kore.io
 
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
@@ -46,15 +47,16 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Lua           | [OpenResty][resty] <sup>5|   269 205  | 30.28 |     43.35   |
 | C++           | [Crow][crow]             |   256 552  | 31.32 |     12.28   |
 | Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>6|
-| Erlang        | [Cowboy][cowboy]   <sup>7|   163 521  | 24.01 |      5.41   |
+| C             | [Kore][kore]       <sup>7|   165 110  | 30.08 |      1.12   |
+| Erlang        | [Cowboy][cowboy]   <sup>8|   163 521  | 24.01 |      5.41   |
 | Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98   |
-| Nim m&s <sup>8| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33   |
-| Nim m&s <sup>8| [Jester][nim]      <sup>9|    83 753  |  5.99 |      1.50   |
-| Ruby          | [Puma][puma]      <sup>10|    83 053  |  6.02 |      6.14   |
-| D ldc2 <sup>11| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
-| D dmd  <sup>12| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
-| Nim    <sup>13| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71   |
-| Nim    <sup>13| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
+| Nim m&s <sup>9| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33   |
+| Nim m&s <sup>9| [Jester][nim]     <sup>10|    83 753  |  5.99 |      1.50   |
+| Ruby          | [Puma][puma]      <sup>11|    83 053  |  6.02 |      6.14   |
+| D ldc2 <sup>12| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
+| D dmd  <sup>13| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
+| Nim    <sup>14| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71   |
+| Nim    <sup>14| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
 
 <sup>1</sup> *Ubuntu 14.04 LTS*, *Linux 3.16*,
              *Xeon E5-1650* @ 3.50GHz, 32 GB RAM  
@@ -66,14 +68,15 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 <sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
 <sup>6</sup> *Rust* *Iron* has some amazing super-stable latency
              in longer runs.  
-<sup>7</sup> *Cowboy* requires some low level tweaking via `sysctl`, see
+<sup>7</sup> *Core* built without SSL via using `make NOTLS=1`.  
+<sup>8</sup> *Cowboy* requires some low level tweaking via `sysctl`, see
              and apply [`sysctl.conf`](sysctl.conf).  
-<sup>8</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
-<sup>9</sup> *Jester* is some higher-level web framework for Nim.  
-<sup>10</sup> Using several *Ruby* instances with `puma -w 12`.  
-<sup>11</sup> *D* language using [LDC2](dmd) compiler v0.16.1 (LLVM 3.7.0).  
-<sup>12</sup> *D* language using standard [DMD](dmd) compiler v2.069.1.  
-<sup>13</sup> *Nim* using standard RC garbage collection, single-thread only.  
+<sup>9</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
+<sup>10</sup> *Jester* is some higher-level web framework for Nim.  
+<sup>11</sup> Using several *Ruby* instances with `puma -w 12`.  
+<sup>12</sup> *D* language using [LDC2](dmd) compiler v0.16.1 (LLVM 3.7.0).  
+<sup>13</sup> *D* language using standard [DMD](dmd) compiler v2.069.1.  
+<sup>14</sup> *Nim* using standard RC garbage collection, single-thread only.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 

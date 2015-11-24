@@ -7,3 +7,6 @@
 [submodule "crow/lib/crow"]
 	path = crow/lib/crow
 	url = https://github.com/ipkn/crow.git
+[submodule "kore/lib/kore"]
+	path = kore/lib/kore
+	url = https://github.com/jorisvink/kore
