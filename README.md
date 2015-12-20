@@ -42,14 +42,14 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
 | Java          | [Undertow][undertow]     |   616 547  | 80.55 |      3.29   |
 | C             | [libmicrohttpd][mhttpd]  |   533 626  | 69.72 |      1.28   |
-| C             | [Onion][onion]     <sup>3|   483 824  | 90.90 |      2.82   |
+| C             | [Kore][kore]       <sup>3|   513 184  | 93.48 |      4.09   |
+| C             | [Onion][onion]     <sup>4|   483 824  | 90.90 |      2.82   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
-| Native        | [Nginx][echo]      <sup>4|   381 368  | 43.26 |     24.24   |
+| Native        | [Nginx][echo]      <sup>5|   381 368  | 43.26 |     24.24   |
 | Go            | [net/http][go]           |   270 253  | 34.28 |      2.52   |
-| Lua           | [OpenResty][resty] <sup>5|   269 205  | 30.28 |     43.35   |
+| Lua           | [OpenResty][resty] <sup>6|   269 205  | 30.28 |     43.35   |
 | C++           | [Crow][crow]             |   256 552  | 31.32 |     12.28   |
-| Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>6|
-| C             | [Kore][kore]       <sup>7|   165 110  | 30.08 |      1.12   |
+| Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>7|
 | Erlang        | [Cowboy][cowboy]   <sup>8|   163 521  | 24.01 |      5.41   |
 | Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98   |
 | Nim m&s <sup>9| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33   |
@@ -65,12 +65,12 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 <sup>2</sup> Latency distribution value at 99% in milliseconds
              (towards worst)  
 
-<sup>3</sup> Running `hello` example with `static` path.  
-<sup>4</sup> Using *Nginx* `echo` module.  
-<sup>5</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>6</sup> *Rust* *Iron* has some amazing super-stable latency
+<sup>3</sup> *Core* built without SSL via using `make NOTLS=1`.  
+<sup>4</sup> Running `hello` example with `static` path.  
+<sup>5</sup> Using *Nginx* `echo` module.  
+<sup>6</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
+<sup>7</sup> *Rust* *Iron* has some amazing super-stable latency
              in longer runs.  
-<sup>7</sup> *Core* built without SSL via using `make NOTLS=1`.  
 <sup>8</sup> *Cowboy* requires some low level tweaking via `sysctl`, see
              and apply [`sysctl.conf`](sysctl.conf).  
 <sup>9</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
