@@ -10,3 +10,6 @@
 [submodule "benchmarks/kore/lib/kore"]
 	path = benchmarks/kore/lib/kore
 	url = ../../jorisvink/kore.git
+[submodule "benchmarks/jester/lib/jester"]
+	path = benchmarks/jester/lib/jester
+	url = ../../dom96/jester
