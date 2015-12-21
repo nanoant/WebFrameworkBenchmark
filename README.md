@@ -48,19 +48,20 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Go            | [fasthttp][fasthttp]     |   433 424  | 60.35 |      3.12   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
 | Native        | [Nginx][echo]      <sup>5|   381 368  | 43.26 |     24.24   |
+| Nim m&s <sup>6| [AsyncHTTPServer][nim]   |   350 511  | 38.11 |     12.82   |
 | Go            | [net/http][go]           |   270 253  | 34.28 |      2.52   |
-| Lua           | [OpenResty][resty] <sup>6|   269 205  | 30.28 |     43.35   |
+| Lua           | [OpenResty][resty] <sup>7|   269 205  | 30.28 |     43.35   |
 | C++           | [Crow][crow]             |   256 552  | 31.32 |     12.28   |
-| Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>7|
-| Erlang        | [Cowboy][cowboy]   <sup>8|   163 521  | 24.01 |      5.41   |
+| Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>8|
+| Erlang        | [Cowboy][cowboy]   <sup>9|   163 521  | 24.01 |      5.41   |
 | Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98   |
-| Nim m&s <sup>9| [AsyncHTTPServer][nim]   |    86 741  |  9.43 |      1.40   |
-| Nim m&s <sup>9| [Jester][nim]     <sup>10|    83 753  |  5.99 |      1.50   |
-| Ruby          | [Puma][puma]      <sup>11|    83 053  |  6.02 |      6.14   |
-| D ldc2 <sup>12| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
-| D dmd  <sup>13| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
-| Nim    <sup>14| [AsyncHTTPServer][nim]   |    52 843  |  5.75 |      4.76   |
-| Nim    <sup>14| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
+| Nim m&s<sup>10| [AsyncHTTPServer][nim]   |    86 741  |  9.43 |      1.40   |
+| Nim m&s<sup>10| [Jester][nim]     <sup>11|    83 753  |  5.99 |      1.50   |
+| Ruby          | [Puma][puma]      <sup>12|    83 053  |  6.02 |      6.14   |
+| D ldc2 <sup>13| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
+| D dmd  <sup>14| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
+| Nim    <sup>15| [AsyncHTTPServer][nim]   |    52 843  |  5.75 |      4.76   |
+| Nim    <sup>15| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
 
 <sup>1</sup> *Ubuntu 14.04 LTS*, *Linux 3.16*,
              *Xeon E5-1650* @ 3.50GHz, 32 GB RAM  
@@ -70,17 +71,19 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 <sup>3</sup> *Core* built without SSL via using `make NOTLS=1`.  
 <sup>4</sup> Running `hello` example with `static` path.  
 <sup>5</sup> Using *Nginx* `echo` module.  
-<sup>6</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
-<sup>7</sup> *Rust* *Iron* has some amazing super-stable latency
+<sup>6</sup> *Nim* using `--gc:markandsweep`, pre-forked processes
+             using `SO_REUSEPORT`.  
+<sup>7</sup> *OpenResty* is in fact *Nginx* with *Lua* module.  
+<sup>8</sup> *Rust* *Iron* has some amazing super-stable latency
              in longer runs.  
-<sup>8</sup> *Cowboy* requires some low level tweaking via `sysctl`, see
+<sup>9</sup> *Cowboy* requires some low level tweaking via `sysctl`, see
              and apply [`sysctl.conf`](sysctl.conf).  
-<sup>9</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
-<sup>10</sup> *Jester* is some higher-level web framework for Nim.  
-<sup>11</sup> Using several *Ruby* instances with `puma -w 12`.  
-<sup>12</sup> *D* language using [LDC2](dmd) compiler v0.16.1 (LLVM 3.7.0).  
-<sup>13</sup> *D* language using standard [DMD](dmd) compiler v2.069.1.  
-<sup>14</sup> *Nim* using standard RC garbage collection, single-thread only.  
+<sup>10</sup> *Nim* using `--gc:markandsweep`, single-thread only.  
+<sup>11</sup> *Jester* is some higher-level web framework for Nim.  
+<sup>12</sup> Using several *Ruby* instances with `puma -w 12`.  
+<sup>13</sup> *D* language using [LDC2](dmd) compiler v0.16.1 (LLVM 3.7.0).  
+<sup>14</sup> *D* language using standard [DMD](dmd) compiler v2.069.1.  
+<sup>15</sup> *Nim* using standard RC garbage collection, single-thread only.  
 
 **NOTE**: Detailed results can be found in [`results/`](results).
 
