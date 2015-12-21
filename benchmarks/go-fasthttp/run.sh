@@ -11,4 +11,4 @@ else
 fi
 
 set -x
-GOMAXPROCS=$threads exec $go run helloworldserver.go
+GOMAXPROCS=${GOMAXPROCS-$threads} exec $go run helloworldserver.go "$@"

@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net"
@@ -14,9 +15,10 @@ import (
 )
 
 var (
-	addr    = flag.String("addr", ":8080", "TCP address to listen to")
-	prefork = flag.Bool("prefork", false, "use prefork")
-	child   = flag.Bool("child", false, "is child proc")
+	addr     = flag.String("addr", ":8080", "TCP address to listen to")
+	prefork  = flag.Bool("prefork", false, "use prefork")
+	affinity = flag.Bool("affinity", false, "use affinity for prefork")
+	child    = flag.Bool("child", false, "is child proc")
 )
 
 func main() {
@@ -35,7 +37,6 @@ func requestHandler(ctx *fasthttp.RequestCtx) {
 
 func getListener() net.Listener {
 	if !*prefork {
-		runtime.GOMAXPROCS(runtime.NumCPU())
 		ln, err := net.Listen("tcp4", *addr)
 		if err != nil {
 			log.Fatal(err)
@@ -46,7 +47,11 @@ func getListener() net.Listener {
 	if !*child {
 		children := make([]*exec.Cmd, runtime.NumCPU())
 		for i := range children {
-			children[i] = exec.Command(os.Args[0], "-prefork", "-child")
+			if *affinity {
+				children[i] = exec.Command(os.Args[0], "-prefork", "-child")
+			} else {
+				children[i] = exec.Command("taskset", "-c", fmt.Sprintf("%d", i), os.Args[0], "-prefork", "-child")
+			}
 			children[i].Stdout = os.Stdout
 			children[i].Stderr = os.Stderr
 			if err := children[i].Start(); err != nil {
