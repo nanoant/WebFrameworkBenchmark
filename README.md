@@ -54,12 +54,12 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Rust          | [Iron][iron]             |   178 789  | 19.44 |  0.05 <sup>7|
 | Erlang        | [Cowboy][cowboy]   <sup>8|   163 521  | 24.01 |      5.41   |
 | Node          | [HTTP][node]             |   112 086  | 13.79 |     11.98   |
-| Nim m&s <sup>9| [AsyncHTTPServer][nim]   |   101 963  |  7.29 |      1.33   |
+| Nim m&s <sup>9| [AsyncHTTPServer][nim]   |    86 741  |  9.43 |      1.40   |
 | Nim m&s <sup>9| [Jester][nim]     <sup>10|    83 753  |  5.99 |      1.50   |
 | Ruby          | [Puma][puma]      <sup>11|    83 053  |  6.02 |      6.14   |
 | D ldc2 <sup>12| [Vibe.d][vibed] <sub>0.7.26|  79 602  | 13.28 |     46.41   |
 | D dmd  <sup>13| [Vibe.d][vibed] <sub>0.7.26|  76 839  | 12.75 |    103.05   |
-| Nim    <sup>14| [AsyncHTTPServer][nim]   |    69 962  |  5.00 |      4.71   |
+| Nim    <sup>14| [AsyncHTTPServer][nim]   |    52 843  |  5.75 |      4.76   |
 | Nim    <sup>14| [Jester][jester]         |    42 698  |  3.05 |      5.42   |
 
 <sup>1</sup> *Ubuntu 14.04 LTS*, *Linux 3.16*,
