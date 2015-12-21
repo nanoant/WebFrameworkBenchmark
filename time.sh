@@ -5,7 +5,7 @@
 
 [ -z "$1" ] && \
 exec wrk \
-	-t$threads -c100 -d10S \
+	-t${THREADS-$threads} -c100 -d10S \
 	--timeout 2000 \
 	-H 'Connection: keep-alive' \
 	${URL-http://localhost:8080/}
@@ -13,10 +13,10 @@ exec wrk \
 for i in {01..04}; do
 	echo === results/${1}_${i}.txt
 	wrk \
-		-t$threads -c100 -d20S \
+		-t${THREADS-$threads} -c100 -d20S \
 		--timeout 2000 \
 		-H 'Connection: keep-alive' \
 		--latency \
 		${URL-http://localhost:8080/} | \
-	tee results/${1}_${i}.txt
+	tee ${1}_${i}.txt
 done
