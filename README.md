@@ -37,6 +37,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 [crow]: https://github.com/ipkn/crow
 [kore]: https://kore.io
 [mhttpd]: https://www.gnu.org/software/libmicrohttpd/
+[fasthttp]: https://github.com/valyala/fasthttp
 
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|

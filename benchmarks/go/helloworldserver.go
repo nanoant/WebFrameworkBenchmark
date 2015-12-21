@@ -1,14 +1,17 @@
 package main
- 
+
 import (
-  "io"
-  "log"
-  "net/http"
+	"io"
+	"log"
+	"net/http"
+
+	// "github.com/davecheney/profile"
 )
- 
+
 func main() {
-  http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
-    io.WriteString(w, "Hello World")
-  })
-  log.Fatal(http.ListenAndServe(":8080", nil))
+	// defer profile.Start(profile.CPUProfile).Stop()
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		io.WriteString(w, "Hello World")
+	})
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
