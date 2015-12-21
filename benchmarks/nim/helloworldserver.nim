@@ -1,5 +1,5 @@
 import asynchttpserver, asyncdispatch, strtabs, parseopt, os, osproc, sequtils,
-       strutils
+       strutils, times
 
 const
   usage = """
@@ -25,21 +25,32 @@ for kind, key, val in getOpt():
       case key
       of "f": prefork = true
       of "r": reuse = true
+      of "h": echo usage
       else:
         raise newException(ValueError, "Unknown option: -" & key)
     of cmdLongOption:
       case key
       of "fork":  prefork = true
       of "reuse": reuse = true
+      of "help":  echo usage
       else:
         raise newException(ValueError, "Unknown option: --" & key)
     else:
       raise newException(ValueError, "Unknown option: --" & key)
 
 if not prefork:
-  var server = newAsyncHttpServer(true, reuse)
+  when defined(reuse):
+    var server = newAsyncHttpServer(true, reuse)
+  else:
+    var server = newAsyncHttpServer(true)
   proc cb(req: Request) {.async.} =
-    await req.respond(Http200, "Hello World", {"Content-Type": "text/html"}.newStringTable())
+    when not defined(nodate):
+      let date = getTime().getGMTime().format("ddd, d MMM yyyy HH:mm:ss") & " +0000"
+      await req.respond(Http200, "Hello World",
+        {"Content-Type": "text/html", "Date": date}.newStringTable())
+    else:
+      await req.respond(Http200, "Hello World",
+        {"Content-Type": "text/html"}.newStringTable())
 
   asyncCheck server.serve(Port(8080), cb)
   runForever()
