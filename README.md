@@ -44,6 +44,7 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | C             | [libmicrohttpd][mhttpd]  |   533 626  | 69.72 |      1.28   |
 | C             | [Kore][kore]       <sup>3|   513 184  | 93.48 |      4.09   |
 | C             | [Onion][onion]     <sup>4|   483 824  | 90.90 |      2.82   |
+| Go            | [fasthttp][fasthttp]     |   433 424  | 60.35 |      3.12   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
 | Native        | [Nginx][echo]      <sup>5|   381 368  | 43.26 |     24.24   |
 | Go            | [net/http][go]           |   270 253  | 34.28 |      2.52   |
