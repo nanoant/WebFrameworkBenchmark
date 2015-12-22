@@ -42,10 +42,10 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 |  Language     |        Framework       | Req/sec<sup>1| MB/sec| 99% ms<sup>2|
 | ------------- | ------------------------ | ----------:| -----:| -----------:|
 | Java          | [Undertow][undertow]     |   616 547  | 80.55 |      3.29   |
+| C             | [Kore][kore]       <sup>3|   572 782  |104.33 |      3.99   |
 | C             | [libmicrohttpd][mhttpd]  |   533 626  | 69.72 |      1.28   |
-| C             | [Kore][kore]       <sup>3|   513 184  | 93.48 |      4.09   |
+| Go            | [fasthttp][fasthttp]     |   485 185  | 67.56 |      5.26   |
 | C             | [Onion][onion]     <sup>4|   483 824  | 90.90 |      2.82   |
-| Go            | [fasthttp][fasthttp]     |   433 424  | 60.35 |      3.12   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
 | Native        | [Nginx][echo]      <sup>5|   381 368  | 43.26 |     24.24   |
 | Nim m&s <sup>6| [AsyncHTTPServer][nim]   |   350 511  | 38.11 |     12.82   |
@@ -118,15 +118,14 @@ behavior of tested frameworks.
 
 ### Conclusions
 
-As expected *Java* solutions outperform any other. 2nd & 3rd places are
-occupied by native C frameworks - *libmicrohttpd* and *Onion*, which are very
-interesting solutions if you want to create small web apps with minimal
-dependencies.
+As expected *Java* solution - [Undertow][undertow] is most optimized. 2nd & 3rd
+places are occupied by native C frameworks - [Kore][kore] and
+[libmicrohttpd][mhttpd].
 
-One should also notice *Nim* performance, which compares to *Node* & *Ruby*,
-but runs only on single core! (1 of 12). *Nim* and its async HTTP server module
-are very young projects, and multi-threaded version is already in plans. It has
-great potential to be next no. 1 in next iteration of this benchmark.
+Finally new [fasthttp][fasthttp] *Go* solution takes 4th place, being very
+close to the top 3. *Go* is very flexible little language, improving
+productivity and it is used already by many companies to deliver some
+heavy-load network services.
 
 It has to be also observed that different frameworks generated different amount
 of data due different HTTP headers being used.
