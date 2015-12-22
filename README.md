@@ -47,8 +47,8 @@ and languages, such as Erlang's natural clustering and hot-swap capabilities.
 | Go            | [fasthttp][fasthttp]     |   485 185  | 67.56 |      5.26   |
 | C             | [Onion][onion]     <sup>4|   483 824  | 90.90 |      2.82   |
 | Java          | [Netty][netty]           |   422 580  | 40.30 |      4.08   |
+| Nim m&s <sup>6| [AsyncHTTPServer][nim]   |   404 040  | 43.93 |      3.98   |
 | Native        | [Nginx][echo]      <sup>5|   381 368  | 43.26 |     24.24   |
-| Nim m&s <sup>6| [AsyncHTTPServer][nim]   |   350 511  | 38.11 |     12.82   |
 | Go            | [net/http][go]           |   270 253  | 34.28 |      2.52   |
 | Lua           | [OpenResty][resty] <sup>7|   269 205  | 30.28 |     43.35   |
 | C++           | [Crow][crow]             |   256 552  | 31.32 |     12.28   |
